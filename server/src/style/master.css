@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+body {
+  margin: 0;
+  padding: 0;
+  background: #999 url("../media/images/background0.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+}
+
+#player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#player #play-button {
+  height: 100px;
+  width: 100px;
+  background-color: #175513;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+#player #play-button::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  content: attr(data-album);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: -10px auto;
+  font-size: 12px;
+  bottom: 0;
+  -webkit-transform: translateY(100%) scale(1.5);
+          transform: translateY(100%) scale(1.5);
+}
+
+#player #play-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#player #play-button:hover::after {
+  opacity: 0.9;
+  cursor: pointer;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+#player #play-button.to-play::after {
+  border-left: 50px solid #fff;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+#player #play-button.to-pause::after {
+  height: 50px;
+  width: 16.66667px;
+  border-left: 16.66667px solid #fff;
+  border-right: 16.66667px solid #fff;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+#player #play-button.to-pause:hover::after {
+  opacity: 1;
+}
+
+#player #duration {
+  width: 50%;
+  height: 25%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+#player #duration #progress {
+  background-color: #0c2b0a;
+  height: 100%;
+  width: 0;
+}
+
+#player #duration::after {
+  content: attr(data-tags);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: #fff;
+}
+
+#player #controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 30px;
+  height: 25%;
+}
+
+#player #controls #next,
+#player #controls #prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+  height: 100%;
+}
+
+#player #controls #next:hover,
+#player #controls #prev:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/*# sourceMappingURL=master.css.map */
